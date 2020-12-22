@@ -1,0 +1,6 @@
+[
+    {"id":1,"name":"tortillas","price":5,"category":"food","quantity":23},
+    {"id":2,"name":"usb cable","price":7,"category":"electronics","quantity":44},
+    {"id":3,"name":"toilet paper","price":10,"category":"essentials","quantity":5},
+    {"id":4,"name":"socks","price":12,"category":"clothes","quantity":77}
+]

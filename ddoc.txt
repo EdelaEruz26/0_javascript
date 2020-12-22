@@ -1,1 +1,40 @@
-empty design doc!
+shopping cart demo!
+
+
+first, the shopping cart. The cart is a txt file with a product list written 
+in json.
+
+The cart contains:
+    - a list of products
+The cart can perform the following actions:
+    - add product(s)
+    - delete product(s)
+
+(the cart checkout is considered as a user action)
+
+now, the warehouse. The warehouse is just another term for the warehouse.txt 
+file. It simply contains products (it can be viewed as a product list). It can 
+only be manipulated directly (by editing the file). Each time a product is 
+checked out, the warehouse has to be updated.
+
+finally, the product:
+
+A product has the following attributes:
+    - id
+    - name
+    - price
+    - category
+    - quantity
+
+
+putting it in rest api terms:
+
+shopping cart routes:
+    - get /cart: list the products in the cart
+    - put /cart : update the cart
+    - delete /cart : empty the cart
+
+'user' routes:
+    - post /checkout: checks out
+
+the warehouse is updated when the user executes a checkout.
