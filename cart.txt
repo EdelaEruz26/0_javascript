@@ -1,0 +1,4 @@
+[
+    {"id":1,"name":"tortillas","price":"5","category":"food","quantity":2},
+    {"id":5,"name":"rice","price":"3","category":"food","quantity":2}
+]

@@ -9,13 +9,17 @@ The cart contains:
 The cart can perform the following actions:
     - add product(s)
     - delete product(s)
+    - update a product quantity
 
 (the cart checkout is considered as a user action)
 
-now, the warehouse. The warehouse is just another term for the warehouse.txt 
+second, the warehouse. The warehouse is just another term for the warehouse.txt 
 file. It simply contains products (it can be viewed as a product list). It can 
 only be manipulated directly (by editing the file). Each time a product is 
 checked out, the warehouse has to be updated.
+
+The warehouse can perform the following actions:
+    - filter (by name, price or category)
 
 finally, the product:
 
@@ -26,15 +30,31 @@ A product has the following attributes:
     - category
     - quantity
 
+lastly, the 'user' can perform the following action:
+    - checkout
+
 
 putting it in rest api terms:
 
 shopping cart routes:
-    - get /cart: list the products in the cart
-    - put /cart : update the cart
-    - delete /cart : empty the cart
+    - get /cart : list the products in the cart.
+    - delete /cart : empty the cart.
+
+shopping cart product routes:
+    - post /cart/products/:product : add a new product to the cart (product is
+    a json object).
+    - put /cart/products/:id/:quantity : update a product quantity in the 
+    cart.
+    - delete /cart/products/:id : delete a product in the cart.
+
+warehouse routes:
+    - get /warehouse : returns everything in the warehouse.
+    - get /warehouse/:filterType/:keyword : filter warehouse items. filterType
+    can be 'name', 'price' or 'category'. keyword is the filter word that will 
+    be used.
 
 'user' routes:
-    - post /checkout: checks out
+    - post /checkout : checks out. returns the total or an error message.
 
 the warehouse is updated when the user executes a checkout.
+

@@ -1,0 +1,21 @@
+shopping cart api.
+
+shopping cart routes:
+    - get /cart : list the products in the cart.
+    - delete /cart : empty the cart.
+
+shopping cart product routes:
+    - post /cart/products/:product : add a new product to the cart (product is
+    a json object).
+    - put /cart/products/:id/:quantity : update a product quantity in the 
+    cart.
+    - delete /cart/products/:id : delete a product in the cart.
+
+warehouse routes:
+    - get /warehouse : returns everything in the warehouse.
+    - get /warehouse/:filterType/:keyword : filter warehouse items. filterType
+    can be 'name', 'price' or 'category'. keyword is the filter word that will 
+    be used.
+
+'user' routes:
+    - post /checkout : checks out. returns the total or an error message.
